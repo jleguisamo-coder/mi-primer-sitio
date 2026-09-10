@@ -1,15 +1,84 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Mi primer sitio</title>
-<link rel="stylesheet" href="style.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Viajes Jóvenes | Experiencias Inolvidables y Seguras</title>
+    <link rel="stylesheet" href="css/styles.css">
+    <!-- Fuente moderna y legible -->
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
 </head>
 <body>
-<h1>¡Hola, mundo!</h1>
-<p>Este es mi primer sitio publicado con GitHub Pages.</p>
-<button onclick="cambiarColor()">Cambiar color</button>
-<script src="script.js"></script>
+
+    <!-- Encabezado y Navegación -->
+    <header class="header">
+        <div class="logo">
+            <h1>Horizonte<span>Joven</span></h1>
+        </div>
+        <nav class="navbar">
+            <ul class="nav-links">
+                <li><a href="index.html" class="active">Inicio</a></li>
+                <li><a href="nosotros.html">Nosotros</a></li>
+                <li><a href="viajes.html">Nuestros Viajes</a></li>
+                <li><a href="contacto.html">Familias & Contacto</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <!-- Sección Principal / Hero Banner -->
+    <section class="hero">
+        <div class="hero-content">
+            <span class="badge">Tranquilidad para los padres, diversión para ellos</span>
+            <h2>El viaje que sueñan, la seguridad que necesitas</h2>
+            <p>Especialistas en la organización de viajes para adolescentes. Garantizamos experiencias únicas basadas en el cuidado constante, responsabilidad profesional y la máxima diversión controlada.</p>
+            <div class="hero-buttons">
+                <a href="viajes.html" class="btn btn-primary">Ver Destinos</a>
+                <button class="btn btn-secondary" id="btn-seguridad">Protocolo de Seguridad 🔒</button>
+            </div>
+        </div>
+    </section>
+
+    <!-- Sección de Valores y Cuidado (Transmite Seriedad) -->
+    <section class="features">
+        <h2>¿Por qué las familias confían en nosotros?</h2>
+        <div class="cards-container">
+            <div class="card">
+                <div class="icon">🛡️</div>
+                <h3>Supervisión 24/7</h3>
+                <p>Coordinadores permanentes, capacitados en primeros auxilios y manejo de grupos adolescentes.</p>
+            </div>
+            <div class="card">
+                <div class="icon">🩺</div>
+                <h3>Asistencia Médica Total</h3>
+                <p>Cobertura médica integral en destino con comunicación fluida e inmediata con los padres.</p>
+            </div>
+            <div class="card">
+                <div class="icon">📍</div>
+                <h3>Seguimiento en Vivo</h3>
+                <p>Plataforma para que las familias conozcan el itinerario diario y fotos en tiempo real.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Modal Interactivo con JS (Protocolo de Cuidado) -->
+    <div id="modal-seguridad" class="modal">
+        <div class="modal-content">
+            <span class="close-btn">&times;</span>
+            <h3>Nuestro Compromiso de Cuidado y Seriedad</h3>
+            <p>Entendemos la responsabilidad que nos confías. Todos nuestros viajes incluyen:</p>
+            <ul>
+                <li>✓ Staff profesional certificado con radio de coordinadores 1 a 10.</li>
+                <li>✓ Selección rigurosa de hoteles y transportes habilitados.</li>
+                <li>✓ Canal directo de consulta para padres las 24 horas del día.</li>
+            </ul>
+        </div>
+    </div>
+
+    <!-- Pie de página -->
+    <footer>
+        <p>&copy; 2026 Horizonte Joven - Viajes Educativos y Recreativos. Todos los derechos reservados.</p>
+    </footer>
+
+    <script src="js/main.js"></script>
 </body>
 </html>
