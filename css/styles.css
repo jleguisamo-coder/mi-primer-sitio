@@ -1,0 +1,242 @@
+/* Variables de Colores Pasteles y Celestes */
+:root {
+    --celeste-pastel: #e0f2fe;
+    --celeste-principal: #38bdf8;
+    --celeste-oscuro: #0284c7;
+    --azul-serio: #1e3a8a;
+    --blanco-fondo: #f8fafc;
+    --texto-principal: #334155;
+    --sombra-suave: 0 4px 15px rgba(0, 0, 0, 0.05);
+}
+
+/* Estilos Generales */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+}
+
+body {
+    background-color: var(--blanco-fondo);
+    color: var(--texto-principal);
+}
+
+/* Header y Barra de Navegación */
+.header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1.2rem 5%;
+    background-color: #ffffff;
+    box-shadow: var(--sombra-suave);
+    position: sticky;
+    top: 0;
+    z-index: 100;
+}
+
+.logo h1 {
+    font-size: 1.5rem;
+    color: var(--azul-serio);
+}
+
+.logo span {
+    color: var(--celeste-oscuro);
+}
+
+/* Menú y Efectos Hover */
+.nav-links {
+    display: flex;
+    list-style: none;
+    gap: 20px;
+}
+
+.nav-links a {
+    text-decoration: none;
+    color: var(--texto-principal);
+    font-weight: 600;
+    font-size: 0.95rem;
+    padding: 8px 16px;
+    border-radius: 20px;
+    transition: all 0.3s ease;
+}
+
+/* EFECTO HOVER EN EL MENÚ */
+.nav-links a:hover {
+    background-color: var(--celeste-pastel);
+    color: var(--celeste-oscuro);
+    transform: translateY(-2px);
+}
+
+.nav-links a.active {
+    background-color: var(--celeste-pastel);
+    color: var(--celeste-oscuro);
+}
+
+/* Hero Section */
+.hero {
+    background: linear-gradient(135deg, #f0f9ff 0%, var(--celeste-pastel) 100%);
+    padding: 80px 5%;
+    text-align: center;
+}
+
+.hero-content {
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+.badge {
+    background-color: #ffffff;
+    color: var(--celeste-oscuro);
+    padding: 6px 16px;
+    border-radius: 20px;
+    font-size: 0.85rem;
+    font-weight: 600;
+    border: 1px solid var(--celeste-principal);
+}
+
+.hero h2 {
+    font-size: 2.5rem;
+    color: var(--azul-serio);
+    margin: 20px 0;
+}
+
+.hero p {
+    font-size: 1.1rem;
+    color: #475569;
+    line-height: 1.6;
+    margin-bottom: 30px;
+}
+
+/* Botones */
+.btn {
+    padding: 12px 28px;
+    border-radius: 25px;
+    font-weight: 600;
+    cursor: pointer;
+    border: none;
+    transition: all 0.3s ease;
+    text-decoration: none;
+    display: inline-block;
+}
+
+.btn-primary {
+    background-color: var(--celeste-principal);
+    color: white;
+}
+
+.btn-primary:hover {
+    background-color: var(--celeste-oscuro);
+    box-shadow: 0 4px 10px rgba(56, 189, 248, 0.4);
+}
+
+.btn-secondary {
+    background-color: #ffffff;
+    color: var(--azul-serio);
+    border: 1px solid var(--celeste-principal);
+    margin-left: 10px;
+}
+
+.btn-secondary:hover {
+    background-color: var(--celeste-pastel);
+}
+
+/* Sección de Tarjetas / Valores */
+.features {
+    padding: 60px 5%;
+    text-align: center;
+}
+
+.features h2 {
+    color: var(--azul-serio);
+    margin-bottom: 40px;
+}
+
+.cards-container {
+    display: flex;
+    justify-content: center;
+    gap: 30px;
+    flex-wrap: wrap;
+}
+
+.card {
+    background: white;
+    padding: 30px;
+    border-radius: 15px;
+    width: 300px;
+    box-shadow: var(--sombra-suave);
+    border: 1px solid #f1f5f9;
+    transition: transform 0.3s ease;
+}
+
+.card:hover {
+    transform: translateY(-5px);
+    border-color: var(--celeste-principal);
+}
+
+.card .icon {
+    font-size: 2.5rem;
+    margin-bottom: 15px;
+}
+
+.card h3 {
+    color: var(--azul-serio);
+    margin-bottom: 10px;
+}
+
+.card p {
+    font-size: 0.9rem;
+    color: #64748b;
+    line-height: 1.5;
+}
+
+/* Estilos del Modal JavaScript */
+.modal {
+    display: none; 
+    position: fixed; 
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.4);
+    justify-content: center;
+    align-items: center;
+}
+
+.modal-content {
+    background-color: white;
+    padding: 30px;
+    border-radius: 15px;
+    max-width: 500px;
+    width: 90%;
+    position: relative;
+    border-top: 5px solid var(--celeste-principal);
+}
+
+.close-btn {
+    position: absolute;
+    right: 20px;
+    top: 15px;
+    font-size: 1.5rem;
+    cursor: pointer;
+}
+
+.modal-content ul {
+    list-style: none;
+    margin-top: 15px;
+}
+
+.modal-content li {
+    margin-bottom: 10px;
+    color: var(--texto-principal);
+}
+
+/* Footer */
+footer {
+    background-color: #ffffff;
+    text-align: center;
+    padding: 20px;
+    border-top: 1px solid var(--celeste-pastel);
+    color: #94a3b8;
+    font-size: 0.85rem;
+}
