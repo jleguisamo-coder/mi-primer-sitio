@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Nuestros Destinos | Horizonte Joven</title>
+    <link rel="stylesheet" href="css/styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <style>
+        /* Estilos específicos para la cuadrícula de destinos */
+        .destinos-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 25px;
+            padding: 40px 5%;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .destino-card {
+            background: #ffffff;
+            border-radius: 15px;
+            overflow: hidden;
+            box-shadow: var(--sombra-suave);
+            border: 1px solid #e2e8f0;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            text-align: center;
+            padding-bottom: 20px;
+        }
+
+        .destino-card:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 8px 25px rgba(56, 189, 248, 0.2);
+            border-color: var(--celeste-principal);
+        }
+
+        .destino-card .bandera {
+            font-size: 3.5rem;
+            margin: 20px 0 10px 0;
+        }
+
+        .destino-card h3 {
+            color: var(--azul-serio);
+            font-size: 1.4rem;
+            margin-bottom: 8px;
+        }
+
+        .destino-card p {
+            color: #64748b;
+            font-size: 0.9rem;
+            padding: 0 15px;
+            margin-bottom: 15px;
+        }
+
+        .destino-card .tag {
+            display: inline-block;
+            background-color: var(--celeste-pastel);
+            color: var(--celeste-oscuro);
+            padding: 4px 12px;
+            border-radius: 12px;
+            font-size: 0.8rem;
+            font-weight: 600;
+            margin-bottom: 15px;
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Encabezado / Menú -->
+    <header class="header">
+        <div class="logo">
+            <h1>Horizonte<span>Joven</span></h1>
+        </div>
+        <nav class="navbar">
+            <ul class="nav-links">
+                <li><a href="index.html">Inicio</a></li>
+                <li><a href="nosotros.html">Nosotros</a></li>
+                <li><a href="viajes.html" class="active">Nuestros Viajes</a></li>
+                <li><a href="contacto.html">Familias & Contacto</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <!-- Banner Superior -->
+    <section class="hero" style="padding: 50px 5%;">
+        <div class="hero-content">
+            <h2>Destinos Internacionales</h2>
+            <p>Experiencias diseñadas para jóvenes con los más altos estándares de seguridad y acompañamiento permanente.</p>
+        </div>
+    </section>
+
+    <!-- Tarjetas de Destinos -->
+    <section class="destinos-grid">
+
+        <!-- Italia -->
+        <div class="destino-card">
+            <div class="bandera">🇮🇹</div>
+            <h3>Italia</h3>
+            <span class="tag">Cultura & Historia</span>
+            <p>Recorrido por Roma, Florencia y Venecia con coordinadores especializados y guías locales.</p>
+            <a href="contacto.html" class="btn btn-primary">Más Información</a>
+        </div>
+
+        <!-- Grecia -->
+        <div class="destino-card">
+            <div class="bandera">🇬🇷</div>
+            <h3>Grecia</h3>
+            <span class="tag">Islas & Aventura</span>
+            <p>Descubre Atenas y las paradisíacas islas griegas con itinerarios 100% supervisados.</p>
+            <a href="contacto.html" class="btn btn-primary">Más Información</a>
+        </div>
+
+        <!-- Bahamas -->
+        <div class="destino-card">
+            <div class="bandera">🇧🇸</div>
+            <h3>Bahamas</h3>
+            <span class="tag">Playa & Relax</span>
+            <p>Resorts de primera categoría, actividades acuáticas y seguridad integral las 24 horas.</p>
+            <a href="contacto.html" class="btn btn-primary">Más Información</a>
+        </div>
+
+        <!-- México -->
+        <div class="destino-card">
+            <div class="bandera">🇲🇽</div>
+            <h3>México</h3>
+            <span class="tag">Caribe & Diversión</span>
+            <p>Cancún y Riviera Maya con parques temáticos exclusivos y asistencia médica completa.</p>
+            <a href="contacto.html" class="btn btn-primary">Más Información</a>
+        </div>
+
+        <!-- República Dominicana -->
+        <div class="destino-card">
+            <div class="bandera">🇩🇴</div>
+            <h3>República Dominicana</h3>
+            <span class="tag">Naturaleza & Playa</span>
+            <p>Punta Cana con complejos cerrados, actividades grupales y supervisión constante.</p>
+            <a href="contacto.html" class="btn btn-primary">Más Información</a>
+        </div>
+
+        <!-- Hawái -->
+        <div class="destino-card">
+            <div class="bandera">🌺</div>
+            <h3>Hawái</h3>
+            <span class="tag">Exótico & Surf</span>
+            <p>Paisajes volcánicos, playas de ensueño y un grupo de coordinadores atento en todo momento.</p>
+            <a href="contacto.html" class="btn btn-primary">Más Información</a>
+        </div>
+
+        <!-- España -->
+        <div class="destino-card">
+            <div class="bandera">🇪🇸</div>
+            <h3>España</h3>
+            <span class="tag">Europa Joven</span>
+            <p>Madrid, Barcelona y Valencia en un circuito educativo y recreativo sin igual.</p>
+            <a href="contacto.html" class="btn btn-primary">Más Información</a>
+        </div>
+
+        <!-- Francia -->
+        <div class="destino-card">
+            <div class="bandera">🇫🇷</div>
+            <h3>Francia</h3>
+            <span class="tag">Arte & Magia</span>
+            <p>París, museos emblemáticos y visita especial a EuroDisney con total tranquilidad.</p>
+            <a href="contacto.html" class="btn btn-primary">Más Información</a>
+        </div>
+
+        <!-- Estados Unidos -->
+        <div class="destino-card">
+            <div class="bandera">🇺🇸</div>
+            <h3>Estados Unidos</h3>
+            <span class="tag">Parques & Ciudades</span>
+            <p>Orlando (Parques de Disney y Universal) o Nueva York con logística de transporte privada.</p>
+            <a href="contacto.html" class="btn btn-primary">Más Información</a>
+        </div>
+
+    </section>
+
+    <!-- Pie de página -->
+    <footer>
+        <p>&copy; 2026 Horizonte Joven - Viajes Educativos y Recreativos. Todos los derechos reservados.</p>
+    </footer>
+
+</body>
+</html>
