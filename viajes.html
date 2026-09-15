@@ -7,7 +7,6 @@
     <link rel="stylesheet" href="css/styles.css">
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
     <style>
-        /* Estilos específicos para la cuadrícula de destinos */
         .destinos-grid {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
@@ -26,6 +25,7 @@
             transition: transform 0.3s ease, box-shadow 0.3s ease;
             text-align: center;
             padding-bottom: 20px;
+            cursor: pointer;
         }
 
         .destino-card:hover {
@@ -62,6 +62,43 @@
             font-weight: 600;
             margin-bottom: 15px;
         }
+
+        /* Estilos de la ventana emergente (Modal) */
+        .modal {
+            display: none;
+            position: fixed;
+            top: 0; left: 0;
+            width: 100%; height: 100%;
+            background: rgba(0, 0, 0, 0.7);
+            justify-content: center;
+            align-items: center;
+            z-index: 1000;
+        }
+
+        .modal-contenido {
+            background: #fff;
+            padding: 25px;
+            border-radius: 15px;
+            max-width: 500px;
+            width: 90%;
+            position: relative;
+            text-align: center;
+        }
+
+        .modal-contenido img {
+            width: 100%;
+            height: 200px;
+            object-fit: cover;
+            border-radius: 10px;
+        }
+
+        .cerrar-btn {
+            position: absolute;
+            top: 10px; right: 15px;
+            font-size: 24px;
+            cursor: pointer;
+            color: #333;
+        }
     </style>
 </head>
 <body>
@@ -93,92 +130,108 @@
     <section class="destinos-grid">
 
         <!-- Italia -->
-        <div class="destino-card">
+        <div class="destino-card tarjeta-destino" data-destino="italia">
             <div class="bandera">🇮🇹</div>
             <h3>Italia</h3>
             <span class="tag">Cultura & Historia</span>
             <p>Recorrido por Roma, Florencia y Venecia con coordinadores especializados y guías locales.</p>
-            <a href="contacto.html" class="btn btn-primary">Más Información</a>
+            <button class="btn btn-primary">Más Información</button>
         </div>
 
         <!-- Grecia -->
-        <div class="destino-card">
+        <div class="destino-card tarjeta-destino" data-destino="grecia">
             <div class="bandera">🇬🇷</div>
             <h3>Grecia</h3>
             <span class="tag">Islas & Aventura</span>
             <p>Descubre Atenas y las paradisíacas islas griegas con itinerarios 100% supervisados.</p>
-            <a href="contacto.html" class="btn btn-primary">Más Información</a>
+            <button class="btn btn-primary">Más Información</button>
         </div>
 
         <!-- Bahamas -->
-        <div class="destino-card">
+        <div class="destino-card tarjeta-destino" data-destino="bahamas">
             <div class="bandera">🇧🇸</div>
             <h3>Bahamas</h3>
             <span class="tag">Playa & Relax</span>
             <p>Resorts de primera categoría, actividades acuáticas y seguridad integral las 24 horas.</p>
-            <a href="contacto.html" class="btn btn-primary">Más Información</a>
+            <button class="btn btn-primary">Más Información</button>
         </div>
 
         <!-- México -->
-        <div class="destino-card">
+        <div class="destino-card tarjeta-destino" data-destino="mexico">
             <div class="bandera">🇲🇽</div>
             <h3>México</h3>
             <span class="tag">Caribe & Diversión</span>
             <p>Cancún y Riviera Maya con parques temáticos exclusivos y asistencia médica completa.</p>
-            <a href="contacto.html" class="btn btn-primary">Más Información</a>
+            <button class="btn btn-primary">Más Información</button>
         </div>
 
         <!-- República Dominicana -->
-        <div class="destino-card">
+        <div class="destino-card tarjeta-destino" data-destino="republicadominicana">
             <div class="bandera">🇩🇴</div>
             <h3>República Dominicana</h3>
             <span class="tag">Naturaleza & Playa</span>
             <p>Punta Cana con complejos cerrados, actividades grupales y supervisión constante.</p>
-            <a href="contacto.html" class="btn btn-primary">Más Información</a>
+            <button class="btn btn-primary">Más Información</button>
         </div>
 
         <!-- Hawái -->
-        <div class="destino-card">
+        <div class="destino-card tarjeta-destino" data-destino="hawai">
             <div class="bandera">🌺</div>
             <h3>Hawái</h3>
             <span class="tag">Exótico & Surf</span>
             <p>Paisajes volcánicos, playas de ensueño y un grupo de coordinadores atento en todo momento.</p>
-            <a href="contacto.html" class="btn btn-primary">Más Información</a>
+            <button class="btn btn-primary">Más Información</button>
         </div>
 
         <!-- España -->
-        <div class="destino-card">
+        <div class="destino-card tarjeta-destino" data-destino="espana">
             <div class="bandera">🇪🇸</div>
             <h3>España</h3>
             <span class="tag">Europa Joven</span>
             <p>Madrid, Barcelona y Valencia en un circuito educativo y recreativo sin igual.</p>
-            <a href="contacto.html" class="btn btn-primary">Más Información</a>
+            <button class="btn btn-primary">Más Información</button>
         </div>
 
         <!-- Francia -->
-        <div class="destino-card">
+        <div class="destino-card tarjeta-destino" data-destino="francia">
             <div class="bandera">🇫🇷</div>
             <h3>Francia</h3>
             <span class="tag">Arte & Magia</span>
             <p>París, museos emblemáticos y visita especial a EuroDisney con total tranquilidad.</p>
-            <a href="contacto.html" class="btn btn-primary">Más Información</a>
+            <button class="btn btn-primary">Más Información</button>
         </div>
 
         <!-- Estados Unidos -->
-        <div class="destino-card">
+        <div class="destino-card tarjeta-destino" data-destino="estadosunidos">
             <div class="bandera">🇺🇸</div>
             <h3>Estados Unidos</h3>
             <span class="tag">Parques & Ciudades</span>
             <p>Orlando (Parques de Disney y Universal) o Nueva York con logística de transporte privada.</p>
-            <a href="contacto.html" class="btn btn-primary">Más Información</a>
+            <button class="btn btn-primary">Más Información</button>
         </div>
 
     </section>
+
+    <!-- Ventana Emergente (Modal) -->
+    <div id="modal-destino" class="modal">
+        <div class="modal-contenido">
+            <span class="cerrar-btn">&times;</span>
+            <img id="modal-img" src="" alt="Imagen Destino">
+            <h3 id="modal-titulo" style="margin-top: 15px;"></h3>
+            <span id="modal-tag" class="tag"></span>
+            <p id="modal-desc" style="margin: 10px 0;"></p>
+            <ul id="modal-lista" style="text-align: left; padding-left: 20px; color: #475569;"></ul>
+        </div>
+    </div>
 
     <!-- Pie de página -->
     <footer>
         <p>&copy; 2026 Horizonte Joven - Viajes Educativos y Recreativos. Todos los derechos reservados.</p>
     </footer>
+
+    <!-- Enlaces a Scripts -->
+    <script src="destinos-data.js"></script>
+    <script src="main.js"></script>
 
 </body>
 </html>
