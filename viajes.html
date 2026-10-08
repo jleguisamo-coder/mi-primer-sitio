@@ -22,15 +22,13 @@
             overflow: hidden;
             box-shadow: var(--sombra-suave);
             border: 1px solid #e2e8f0;
-            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            transition: transform 0.3s ease;
             text-align: center;
             padding-bottom: 20px;
-            cursor: pointer;
         }
 
         .destino-card:hover {
             transform: translateY(-8px);
-            box-shadow: 0 8px 25px rgba(56, 189, 248, 0.2);
             border-color: var(--celeste-principal);
         }
 
@@ -63,47 +61,52 @@
             margin-bottom: 15px;
         }
 
-        /* Estilos de la ventana emergente (Modal) */
-        .modal {
-            display: none;
-            position: fixed;
-            top: 0; left: 0;
-            width: 100%; height: 100%;
-            background: rgba(0, 0, 0, 0.7);
-            justify-content: center;
-            align-items: center;
-            z-index: 1000;
-        }
-
-        .modal-contenido {
-            background: #fff;
-            padding: 25px;
-            border-radius: 15px;
-            max-width: 500px;
-            width: 90%;
-            position: relative;
-            text-align: center;
-        }
-
-        .modal-contenido img {
+        /* Estilos de la foto en el Modal */
+        .modal-img {
             width: 100%;
             height: 200px;
             object-fit: cover;
             border-radius: 10px;
+            margin-bottom: 15px;
         }
 
-        .cerrar-btn {
-            position: absolute;
-            top: 10px; right: 15px;
-            font-size: 24px;
-            cursor: pointer;
-            color: #333;
+        .modal-content-destino {
+            max-width: 600px;
+            text-align: left;
+        }
+
+        .modal-content-destino h3 {
+            color: var(--azul-serio);
+            font-size: 1.6rem;
+            margin-bottom: 10px;
+        }
+
+        .modal-content-destino p {
+            color: #475569;
+            line-height: 1.6;
+            margin-bottom: 15px;
+        }
+
+        .modal-details {
+            background-color: var(--celeste-pastel);
+            padding: 15px;
+            border-radius: 10px;
+            margin-bottom: 20px;
+        }
+
+        .modal-details ul {
+            list-style: none;
+        }
+
+        .modal-details li {
+            font-size: 0.9rem;
+            color: var(--azul-serio);
+            margin-bottom: 5px;
         }
     </style>
 </head>
 <body>
 
-    <!-- Encabezado / Menú -->
     <header class="header">
         <div class="logo">
             <h1>Horizonte<span>Joven</span></h1>
@@ -118,120 +121,204 @@
         </nav>
     </header>
 
-    <!-- Banner Superior -->
     <section class="hero" style="padding: 50px 5%;">
         <div class="hero-content">
             <h2>Destinos Internacionales</h2>
-            <p>Experiencias diseñadas para jóvenes con los más altos estándares de seguridad y acompañamiento permanente.</p>
+            <p>Haz clic en cualquier destino para ver fotos e itinerarios detallados.</p>
         </div>
     </section>
 
-    <!-- Tarjetas de Destinos -->
+    <!-- Lista de Destinos -->
     <section class="destinos-grid">
 
-        <!-- Italia -->
-        <div class="destino-card tarjeta-destino" data-destino="italia">
+        <div class="destino-card">
             <div class="bandera">🇮🇹</div>
             <h3>Italia</h3>
             <span class="tag">Cultura & Historia</span>
-            <p>Recorrido por Roma, Florencia y Venecia con coordinadores especializados y guías locales.</p>
-            <button class="btn btn-primary">Más Información</button>
+            <p>Roma, Florencia y Venecia con coordinadores especializados.</p>
+            <button class="btn btn-primary btn-destino" data-destino="italia">Ver Detalles y Foto</button>
         </div>
 
-        <!-- Grecia -->
-        <div class="destino-card tarjeta-destino" data-destino="grecia">
+        <div class="destino-card">
             <div class="bandera">🇬🇷</div>
             <h3>Grecia</h3>
             <span class="tag">Islas & Aventura</span>
-            <p>Descubre Atenas y las paradisíacas islas griegas con itinerarios 100% supervisados.</p>
-            <button class="btn btn-primary">Más Información</button>
+            <p>Atenas y las paradisíacas islas griegas 100% supervisadas.</p>
+            <button class="btn btn-primary btn-destino" data-destino="grecia">Ver Detalles y Foto</button>
         </div>
 
-        <!-- Bahamas -->
-        <div class="destino-card tarjeta-destino" data-destino="bahamas">
+        <div class="destino-card">
             <div class="bandera">🇧🇸</div>
             <h3>Bahamas</h3>
             <span class="tag">Playa & Relax</span>
-            <p>Resorts de primera categoría, actividades acuáticas y seguridad integral las 24 horas.</p>
-            <button class="btn btn-primary">Más Información</button>
+            <p>Resorts de primera categoría y actividades acuáticas.</p>
+            <button class="btn btn-primary btn-destino" data-destino="bahamas">Ver Detalles y Foto</button>
         </div>
 
-        <!-- México -->
-        <div class="destino-card tarjeta-destino" data-destino="mexico">
+        <div class="destino-card">
             <div class="bandera">🇲🇽</div>
             <h3>México</h3>
             <span class="tag">Caribe & Diversión</span>
-            <p>Cancún y Riviera Maya con parques temáticos exclusivos y asistencia médica completa.</p>
-            <button class="btn btn-primary">Más Información</button>
+            <p>Cancún y Riviera Maya con parques temáticos exclusivos.</p>
+            <button class="btn btn-primary btn-destino" data-destino="mexico">Ver Detalles y Foto</button>
         </div>
 
-        <!-- República Dominicana -->
-        <div class="destino-card tarjeta-destino" data-destino="republicadominicana">
+        <div class="destino-card">
             <div class="bandera">🇩🇴</div>
             <h3>República Dominicana</h3>
             <span class="tag">Naturaleza & Playa</span>
-            <p>Punta Cana con complejos cerrados, actividades grupales y supervisión constante.</p>
-            <button class="btn btn-primary">Más Información</button>
+            <p>Punta Cana con complejos cerrados y actividades grupales.</p>
+            <button class="btn btn-primary btn-destino" data-destino="dominicana">Ver Detalles y Foto</button>
         </div>
 
-        <!-- Hawái -->
-        <div class="destino-card tarjeta-destino" data-destino="hawai">
+        <div class="destino-card">
             <div class="bandera">🌺</div>
             <h3>Hawái</h3>
             <span class="tag">Exótico & Surf</span>
-            <p>Paisajes volcánicos, playas de ensueño y un grupo de coordinadores atento en todo momento.</p>
-            <button class="btn btn-primary">Más Información</button>
+            <p>Paisajes volcánicos y playas de ensueño.</p>
+            <button class="btn btn-primary btn-destino" data-destino="hawai">Ver Detalles y Foto</button>
         </div>
 
-        <!-- España -->
-        <div class="destino-card tarjeta-destino" data-destino="espana">
+        <div class="destino-card">
             <div class="bandera">🇪🇸</div>
             <h3>España</h3>
             <span class="tag">Europa Joven</span>
-            <p>Madrid, Barcelona y Valencia en un circuito educativo y recreativo sin igual.</p>
-            <button class="btn btn-primary">Más Información</button>
+            <p>Madrid, Barcelona y Valencia en un circuito inolvidable.</p>
+            <button class="btn btn-primary btn-destino" data-destino="espana">Ver Detalles y Foto</button>
         </div>
 
-        <!-- Francia -->
-        <div class="destino-card tarjeta-destino" data-destino="francia">
+        <div class="destino-card">
             <div class="bandera">🇫🇷</div>
             <h3>Francia</h3>
             <span class="tag">Arte & Magia</span>
-            <p>París, museos emblemáticos y visita especial a EuroDisney con total tranquilidad.</p>
-            <button class="btn btn-primary">Más Información</button>
+            <p>París, museos y visita especial a EuroDisney.</p>
+            <button class="btn btn-primary btn-destino" data-destino="francia">Ver Detalles y Foto</button>
         </div>
 
-        <!-- Estados Unidos -->
-        <div class="destino-card tarjeta-destino" data-destino="estadosunidos">
+        <div class="destino-card">
             <div class="bandera">🇺🇸</div>
             <h3>Estados Unidos</h3>
             <span class="tag">Parques & Ciudades</span>
-            <p>Orlando (Parques de Disney y Universal) o Nueva York con logística de transporte privada.</p>
-            <button class="btn btn-primary">Más Información</button>
+            <p>Orlando (Disney y Universal) o la magia de Nueva York.</p>
+            <button class="btn btn-primary btn-destino" data-destino="eeuu">Ver Detalles y Foto</button>
         </div>
 
     </section>
 
-    <!-- Ventana Emergente (Modal) -->
+    <!-- Modal Emergente para el Destino -->
     <div id="modal-destino" class="modal">
-        <div class="modal-contenido">
-            <span class="cerrar-btn">&times;</span>
-            <img id="modal-img" src="" alt="Imagen Destino">
-            <h3 id="modal-titulo" style="margin-top: 15px;"></h3>
-            <span id="modal-tag" class="tag"></span>
-            <p id="modal-desc" style="margin: 10px 0;"></p>
-            <ul id="modal-lista" style="text-align: left; padding-left: 20px; color: #475569;"></ul>
+        <div class="modal-content modal-content-destino">
+            <span class="close-btn">&times;</span>
+            <img id="modal-img" class="modal-img" src="" alt="Foto del destino">
+            <h3 id="modal-titulo"></h3>
+            <p id="modal-descripcion"></p>
+            <div class="modal-details">
+                <ul id="modal-lista"></ul>
+            </div>
+            <a href="contacto.html" class="btn btn-primary" style="display: inline-block; width: 100%; text-align: center;">Consultar por este Viaje</a>
         </div>
     </div>
 
-    <!-- Pie de página -->
     <footer>
         <p>&copy; 2026 Horizonte Joven - Viajes Educativos y Recreativos. Todos los derechos reservados.</p>
     </footer>
 
-    <!-- Enlaces a Scripts -->
-    <script src="destinos-data.js"></script>
-    <script src="js/main.js"></script>
+    <!-- Script Interactivo de los Destinos -->
+    <script>
+        // Información y fotos de cada país
+        const infoDestinos = {
+            italia: {
+                titulo: "Italia: Arte, Historia y Cultura",
+                foto: "https://images.unsplash.com/photo-1552832230-c0197dd311b5?q=80&w=800&auto=format&fit=crop",
+                descripcion: "Un recorrido inolvidable por las ciudades más emblemáticas de Italia. Diseñado para jóvenes que buscan conocer monumentos históricos con la máxima seguridad.",
+                detalles: ["📍 Visitas: Roma, Coliseo, Florencia y paseo en góndola en Venecia.", "🛡️ Cuidado: Bus privado para el grupo durante todo el recorrido.", "🏥 Asistencia: Seguro médico internacional con cobertura total."]
+            },
+            grecia: {
+                titulo: "Grecia: Historia Antigua e Islas Paradisíacas",
+                foto: "https://images.unsplash.com/photo-1533105079780-92b9be482077?q=80&w=800&auto=format&fit=crop",
+                descripcion: "Combina la historia mitológica de Atenas con las hermosas aguas del Mar Egeo en Mykonos y Santorini.",
+                detalles: ["📍 Visitas: Acrópolis de Atenas, Santorini y Mykonos.", "🛡️ Cuidado: Coordinador cada 8 adolescentes en paseos en ferry.", "🏥 Asistencia: Guías locales bilingües y médicos en destino."]
+            },
+            bahamas: {
+                titulo: "Bahamas: Caribe Tropical y Diversión Acuática",
+                foto: "https://images.unsplash.com/photo-1548574505-5e2386903d8f?q=80&w=800&auto=format&fit=crop",
+                descripcion: "Un entorno seguro en resorts privados frente al mar, ideal para el descanso, actividades acuáticas y fiestas de integración supervisadas.",
+                detalles: ["📍 Visitas: Nassau, playas privadas y parques acuáticos.", "🛡️ Cuidado: Salvavidas dedicados y guardias privados 24h.", "🏥 Asistencia: Servicio de enfermería en el resort."]
+            },
+            mexico: {
+                titulo: "México: Cancún y Riviera Maya",
+                foto: "https://images.unsplash.com/photo-1512813195386-6cf811ad3542?q=80&w=800&auto=format&fit=crop",
+                descripcion: "Playa, parques ecológicos como Xcaret y ruinas mayas. Un itinerario lleno de energía y cultura.",
+                detalles: ["📍 Visitas: Chichén Itzá, Cenotes y Parques Xcaret.", "🛡️ Cuidado: Hoteles All-Inclusive familiares cerrados al público general.", "🏥 Asistencia: Pulseras con chip de localización opcional."]
+            },
+            dominicana: {
+                titulo: "República Dominicana: Punta Cana",
+                foto: "https://images.unsplash.com/photo-1540555700478-4be289fbecef?q=80&w=800&auto=format&fit=crop",
+                descripcion: "El destino preferido para graduados y grupos jóvenes. Playas de arena blanca, catamarán y actividades deportivas.",
+                detalles: ["📍 Visitas: Isla Saona, tours de snorkel y playas privadas.", "🛡️ Cuidado: Monitoreo constante del grupo en el hotel.", "🏥 Asistencia: Médico de cabecera viajando con la delegación."]
+            },
+            hawai: {
+                titulo: "Hawái: Naturaleza, Surf y Aventura Volcánica",
+                foto: "https://images.unsplash.com/photo-1507525428034-b723cf961d3e?q=80&w=800&auto=format&fit=crop",
+                descripcion: "Una experiencia exótica y segura en el Pacífico. Explora la cultura Polinesia, volcanes activos y clases de surf adaptadas.",
+                detalles: ["📍 Visitas: Honolulu, Waikiki Beach y Pearl Harbor.", "🛡️ Cuidado: Instructores certificados para actividades de agua.", "🏥 Asistencia: Cobertura de salud de nivel EE. UU."]
+            },
+            espana: {
+                titulo: "España: Madrid, Barcelona y Costa Brava",
+                foto: "https://images.unsplash.com/photo-1543783207-ec64e4d95325?q=80&w=800&auto=format&fit=crop",
+                descripcion: "Cultura, museos, estadios de fútbol y parques de atracciones en un entorno de idioma nativo y máxima tranquilidad.",
+                detalles: ["📍 Visitas: Parque Warner, Estadio Santiago Bernabéu, Sagrada Familia.", "🛡️ Cuidado: Hoteles en zonas residenciales tranquilas.", "🏥 Asistencia: Centro de atención 24h en español."]
+            },
+            francia: {
+                titulo: "Francia: París y Disneyland",
+                foto: "https://images.unsplash.com/photo-1502602898657-3e91760cbb34?q=80&w=800&auto=format&fit=crop",
+                descripcion: "La magia de París combinada con la diversión ilimitada en el parque Disneyland París.",
+                detalles: ["📍 Visitas: Torre Eiffel, Museo del Louvre, Disneyland París.", "🛡️ Cuidado: Entradas prioritarias para evitar filas y aglomeraciones.", "🏥 Asistencia: Staff multilingüe a disposición permanente."]
+            },
+            eeuu: {
+                titulo: "Estados Unidos: Orlando & Nueva York",
+                foto: "https://images.unsplash.com/photo-1508873696983-2df515122519?q=80&w=800&auto=format&fit=crop",
+                descripcion: "La combinación perfecta entre la magia de los parques temáticos de Orlando y la emoción de la Gran Manzana.",
+                detalles: ["📍 Visitas: Magic Kingdom, Universal Studios, Times Square, Estatua de la Libertad.", "🛡️ Cuidado: Traslados en buses privados con choferes certificados.", "🏥 Asistencia: Seguro médico con máxima cobertura en EE. UU."]
+            }
+        };
 
+        const modal = document.getElementById("modal-destino");
+        const closeBtn = document.querySelector(".close-btn");
+        const btns = document.querySelectorAll(".btn-destino");
+
+        btns.forEach(btn => {
+            btn.addEventListener("click", () => {
+                const clave = btn.getAttribute("data-destino");
+                const data = infoDestinos[clave];
+
+                if (data) {
+                    document.getElementById("modal-img").src = data.foto;
+                    document.getElementById("modal-titulo").textContent = data.titulo;
+                    document.getElementById("modal-descripcion").textContent = data.descripcion;
+
+                    const lista = document.getElementById("modal-lista");
+                    lista.innerHTML = "";
+                    data.detalles.forEach(item => {
+                        const li = document.createElement("li");
+                        li.textContent = item;
+                        lista.appendChild(li);
+                    });
+
+                    modal.style.display = "flex";
+                }
+            });
+        });
+
+        closeBtn.addEventListener("click", () => {
+            modal.style.display = "none";
+        });
+
+        window.addEventListener("click", (e) => {
+            if (e.target === modal) {
+                modal.style.display = "none";
+            }
+        });
+    </script>
 </body>
 </html>
