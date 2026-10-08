@@ -1,0 +1,196 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Nosotros | Horizonte Joven</title>
+    <link rel="stylesheet" href="css/styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <style>
+        .about-section {
+            padding: 50px 5%;
+            max-width: 1100px;
+            margin: 0 auto;
+        }
+
+        .about-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 40px;
+            align-items: center;
+            margin-bottom: 60px;
+        }
+
+        .about-text h2 {
+            color: var(--azul-serio);
+            font-size: 2rem;
+            margin-bottom: 15px;
+        }
+
+        .about-text p {
+            color: #475569;
+            line-height: 1.7;
+            font-size: 1rem;
+            margin-bottom: 15px;
+        }
+
+        .about-img {
+            width: 100%;
+            height: 350px;
+            object-fit: cover;
+            border-radius: 20px;
+            box-shadow: var(--sombra-suave);
+            border: 4px solid #ffffff;
+        }
+
+        /* Sección Diferenciales */
+        .diferenciales {
+            background-color: var(--celeste-pastel);
+            padding: 50px 5%;
+            border-radius: 20px;
+            text-align: center;
+            margin-bottom: 60px;
+        }
+
+        .diferenciales h2 {
+            color: var(--azul-serio);
+            margin-bottom: 30px;
+            font-size: 1.8rem;
+        }
+
+        .dif-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 20px;
+        }
+
+        .dif-card {
+            background: white;
+            padding: 25px;
+            border-radius: 15px;
+            box-shadow: var(--sombra-suave);
+        }
+
+        .dif-card .num {
+            font-size: 2rem;
+            font-weight: 700;
+            color: var(--celeste-oscuro);
+            margin-bottom: 10px;
+        }
+
+        .dif-card h3 {
+            color: var(--azul-serio);
+            font-size: 1.1rem;
+            margin-bottom: 10px;
+        }
+
+        .dif-card p {
+            color: #64748b;
+            font-size: 0.9rem;
+            line-height: 1.5;
+        }
+
+        /* Galería de fotos */
+        .galeria-titulo {
+            text-align: center;
+            color: var(--azul-serio);
+            margin-bottom: 25px;
+        }
+
+        .galeria-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+            gap: 20px;
+        }
+
+        .galeria-grid img {
+            width: 100%;
+            height: 220px;
+            object-fit: cover;
+            border-radius: 15px;
+            transition: transform 0.3s ease;
+        }
+
+        .galeria-grid img:hover {
+            transform: scale(1.03);
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Menú -->
+    <header class="header">
+        <div class="logo">
+            <h1>Horizonte<span>Joven</span></h1>
+        </div>
+        <nav class="navbar">
+            <ul class="nav-links">
+                <li><a href="index.html">Inicio</a></li>
+                <li><a href="nosotros.html" class="active">Nosotros</a></li>
+                <li><a href="viajes.html">Nuestros Viajes</a></li>
+                <li><a href="contacto.html">Familias & Contacto</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <div class="about-section">
+        
+        <!-- ¿Quiénes Somos? -->
+        <div class="about-grid">
+            <div class="about-text">
+                <h2>¿Quiénes somos?</h2>
+                <p>Somos Joaqui, Uma y Liv, unas amigas que aman viajar y crear recuerdos juntas. Creemos que las primeras grandes experiencias y aventuras marcan para siempre.</p>
+                <p>Por eso, creamos experiencias seguras, divertidas y completamente diferentes para adolescentes que quieren descubrir el mundo a su propia manera.</p>
+            </div>
+            <img class="about-img" src="https://images.unsplash.com/photo-1529156069898-49953e39b3ac?q=80&w=800" alt="Amigas de viaje">
+        </div>
+
+        <!-- Nuestra Historia -->
+        <div class="about-grid" style="direction: rtl;">
+            <div class="about-text" style="direction: ltr;">
+                <h2>Nuestra Historia</h2>
+                <p>Todo comenzó con 3 amigas, 3 mochilas y un viaje que salió casi perfecto: se perdieron unas valijas, nos equivocamos de tren y terminamos cenando en un carrito a las 2:00 AM... ¡pero fue el mejor viaje de nuestras vidas!</p>
+                <p>Años después, notamos que los viajes para adolescentes solían ser aburridos o estaban pensados únicamente para adultos. Así que decidimos armar el viaje que nos hubiera gustado hacer a nosotros a los 16, 17 o 18 años con amigos: lleno de aventuras y libertad, pero con coordinadores atentos, divertidos y con las familias siempre tranquilas.</p>
+            </div>
+            <img class="about-img" src="https://images.unsplash.com/photo-1539635278303-d4002c07eae3?q=80&w=800" alt="Grupo de amigos viajando">
+        </div>
+
+        <!-- ¿Qué nos hace distintas? -->
+        <section class="diferenciales">
+            <h2>¿Qué nos hace distintas?</h2>
+            <div class="dif-grid">
+                <div class="dif-card">
+                    <div class="num">01</div>
+                    <h3>Acompañamiento 24/7</h3>
+                    <p>Coordinadores acompañando en todo momento para cualquier cosa que los chicos o familias necesiten.</p>
+                </div>
+                <div class="dif-card">
+                    <div class="num">02</div>
+                    <h3>Grupos Reducidos</h3>
+                    <p>Con grupos pequeños tenemos la capacidad de hacer más cosas, conocer más lugares y integrarnos mejor.</p>
+                </div>
+                <div class="dif-card">
+                    <div class="num">03</div>
+                    <h3>Libertad & Equilibrio</h3>
+                    <p>Itinerarios pensados cuidadosamente con momentos libres para explorar y disfrutar con amigos.</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Galería de Fotos de Amigos de Viaje -->
+        <h2 class="galeria-titulo">Momentos de nuestros viajes</h2>
+        <div class="galeria-grid">
+            <img src="https://images.unsplash.com/photo-1517457373958-b7bdd4587205?q=80&w=600" alt="Amigos en la playa">
+            <img src="https://images.unsplash.com/photo-1488646953014-85cb44e25828?q=80&w=600" alt="Viajeros explorando">
+            <img src="https://images.unsplash.com/photo-1523580494863-6f3031224c94?q=80&w=600" alt="Grupo celebrando">
+            <img src="https://images.unsplash.com/photo-1527631746610-bca00a040d60?q=80&w=600" alt="Jóvenes de viaje">
+        </div>
+
+    </div>
+
+    <footer>
+        <p>&copy; 2026 Horizonte Joven - Viajes Educativos y Recreativos. Todos los derechos reservados.</p>
+    </footer>
+
+</body>
+</html>
